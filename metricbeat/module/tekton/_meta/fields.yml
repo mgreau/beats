@@ -1,0 +1,11 @@
+- key: tekton
+  title: "tekton"
+  release: beta
+  description: >
+    Tekton module
+  fields:
+    - name: tekton
+      type: group
+      description: >
+        `tekton` contains statistics that were read from Tekton Pipelines controller
+      fields:

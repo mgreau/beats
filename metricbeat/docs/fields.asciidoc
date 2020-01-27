@@ -69,6 +69,7 @@ grouped in the following categories:
 * <<exported-fields-stan>>
 * <<exported-fields-statsd>>
 * <<exported-fields-system>>
+* <<exported-fields-tekton>>
 * <<exported-fields-tomcat>>
 * <<exported-fields-traefik>>
 * <<exported-fields-uwsgi>>
@@ -34983,6 +34984,109 @@ The OS uptime in milliseconds.
 type: long
 
 format: duration
+
+--
+
+[[exported-fields-tekton]]
+== tekton fields
+
+Tekton module
+
+
+
+[float]
+=== tekton
+
+`tekton` contains statistics that were read from Tekton Pipelines controller
+
+
+
+[float]
+=== taskruns
+
+Tekton TaskRuns metrics
+
+
+
+*`tekton.taskruns.total`*::
++
+--
+Total TaskRuns managed by Tekton
+
+
+type: long
+
+--
+
+*`tekton.taskruns.running`*::
++
+--
+Number of TaskRuns executing currently
+
+
+type: long
+
+--
+
+*`tekton.taskruns.taskrun.duration.sec.bucket.*`*::
++
+--
+TaskRun duration histogram buckets in seconds
+
+
+type: object
+
+--
+
+*`tekton.taskruns.taskrun.duration.sec.sum`*::
++
+--
+TaskRun duration, sum of durations in seconds
+
+
+type: long
+
+format: duration
+
+--
+
+*`tekton.taskruns.taskrun.duration.sec.count`*::
++
+--
+TaskRun duration, number of requests
+
+
+type: long
+
+--
+
+*`tekton.taskruns.taskrun.name`*::
++
+--
+This identifies the TaskRun name.
+
+
+type: keyword
+
+--
+
+*`tekton.taskruns.taskrun.task`*::
++
+--
+This identifies the Task related to this Run.
+
+
+type: long
+
+--
+
+*`tekton.taskruns.taskrun.namespace`*::
++
+--
+This identifies the namespace where the TaskRun is deployed.
+
+
+type: keyword
 
 --
 

@@ -1,0 +1,44 @@
+- name: taskruns
+  type: group
+  description: >
+    Tekton TaskRuns metrics
+  release: beta
+  fields:
+    - name: total
+      type: long
+      description: >
+        Total TaskRuns managed by Tekton
+    - name: running
+      type: long
+      description: >
+        Number of TaskRuns executing currently
+    - name: taskrun.duration.sec.bucket.*
+      type: object
+      object_type: long
+      description: >
+        TaskRun duration histogram buckets in seconds
+    - name: taskrun.duration.sec.sum
+      type: long
+      format: duration
+      description: >
+        TaskRun duration, sum of durations in seconds
+    - name: taskrun.duration.sec.count
+      type: long
+      description: >
+        TaskRun duration, number of requests
+
+    - name: taskrun.name
+      type: keyword
+      description: >
+        This identifies the TaskRun name.
+    - name: taskrun.task
+      type: long
+      description: >
+        This identifies the Task related to this Run.
+    - name: taskrun.namespace
+      type: keyword
+      description: >
+        This identifies the namespace where the TaskRun is deployed.
+
+
+

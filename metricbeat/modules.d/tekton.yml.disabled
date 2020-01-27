@@ -1,0 +1,12 @@
+# Module: tekton
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/master/metricbeat-module-tekton.html
+
+# Tekton Pipelines. To collect all Mixer-generated metrics
+- module: tekton
+  metricsets: ["taskruns"]
+  enabled: false
+  period: 10s
+  # use tekton-pipelines-controller:9090, when deploying Metricbeat in a kuberentes cluster
+  hosts: ["localhost:9090"]
+  metrics_path: /metrics
+
