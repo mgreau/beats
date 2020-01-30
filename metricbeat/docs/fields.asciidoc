@@ -35002,29 +35002,96 @@ Tekton module
 
 
 [float]
+=== pipelines_stats
+
+Tekton Pipelines metrics (TaskRuns, PipelineRuns...)
+
+
+
+*`tekton.pipelines_stats.taskrun.count`*::
++
+--
+Total TaskRuns executed by Tekton
+
+
+type: long
+
+--
+
+*`tekton.pipelines_stats.taskrun.running.count`*::
++
+--
+Number of TaskRuns currently running
+
+
+type: long
+
+--
+
+*`tekton.pipelines_stats.pipelinerun.count`*::
++
+--
+Total PipelineRuns executed by Tekton
+
+
+type: long
+
+--
+
+*`tekton.pipelines_stats.pipelinerun.running.count`*::
++
+--
+Number of PipelineRuns currently running
+
+
+type: long
+
+--
+
+[float]
 === taskruns
 
 Tekton TaskRuns metrics
 
 
 
-*`tekton.taskruns.total`*::
+*`tekton.taskruns.taskrun.name`*::
 +
 --
-Total TaskRuns managed by Tekton
+This identifies the TaskRun name.
+
+
+type: keyword
+
+--
+
+*`tekton.taskruns.taskrun.status`*::
++
+--
+This identifies the TaskRun status (success, failed).
+
+
+type: keyword
+
+--
+
+*`tekton.taskruns.taskrun.task`*::
++
+--
+This identifies the Task related to this Run.
 
 
 type: long
 
 --
 
-*`tekton.taskruns.running`*::
+*`tekton.taskruns.taskrun.namespace`*::
 +
 --
-Number of TaskRuns executing currently
+This identifies the namespace where the TaskRun is deployed.
 
 
-type: long
+type: keyword
 
 --
 
@@ -35057,36 +35124,6 @@ TaskRun duration, number of requests
 
 
 type: long
-
---
-
-*`tekton.taskruns.taskrun.name`*::
-+
---
-This identifies the TaskRun name.
-
-
-type: keyword
-
---
-
-*`tekton.taskruns.taskrun.task`*::
-+
---
-This identifies the Task related to this Run.
-
-
-type: long
-
---
-
-*`tekton.taskruns.taskrun.namespace`*::
-+
---
-This identifies the namespace where the TaskRun is deployed.
-
-
-type: keyword
 
 --
 

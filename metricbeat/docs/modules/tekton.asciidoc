@@ -20,12 +20,12 @@ in <<configuration-metricbeat>>. Here is an example configuration:
 [source,yaml]
 ----
 metricbeat.modules:
-# Tekton Pipelines. To collect all Mixer-generated metrics
+# Tekton Pipelines. To collect all Tekton-generated metrics
 - module: tekton
-  metricsets: ["taskruns"]
+  metricsets: ["pipelines_stats", "taskruns"]
   enabled: false
   period: 10s
-  # use tekton-pipelines-controller:9090, when deploying Metricbeat in a kuberentes cluster
+  # use tekton-pipelines-controller:9090, when deploying Metricbeat in a Kubernetes cluster
   hosts: ["localhost:9090"]
   metrics_path: /metrics
 
@@ -36,7 +36,11 @@ metricbeat.modules:
 
 The following metricsets are available:
 
+* <<metricbeat-metricset-tekton-pipelines_stats,pipelines_stats>>
+
 * <<metricbeat-metricset-tekton-taskruns,taskruns>>
+
+include::tekton/pipelines_stats.asciidoc[]
 
 include::tekton/taskruns.asciidoc[]
 

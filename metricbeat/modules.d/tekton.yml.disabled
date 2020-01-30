@@ -1,5 +1,5 @@
 # Module: tekton
-# Docs: https://www.elastic.co/guide/en/beats/metricbeat/master/metricbeat-module-tekton.html
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.5/metricbeat-module-tekton.html
 
 # Tekton Pipelines. To collect all Tekton-generated metrics
 - module: tekton

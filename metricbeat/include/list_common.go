@@ -147,6 +147,7 @@ import (
 	_ "github.com/elastic/beats/metricbeat/module/system/socket_summary"
 	_ "github.com/elastic/beats/metricbeat/module/system/uptime"
 	_ "github.com/elastic/beats/metricbeat/module/tekton"
+	_ "github.com/elastic/beats/metricbeat/module/tekton/pipelines_stats"
 	_ "github.com/elastic/beats/metricbeat/module/tekton/taskruns"
 	_ "github.com/elastic/beats/metricbeat/module/traefik"
 	_ "github.com/elastic/beats/metricbeat/module/traefik/health"
