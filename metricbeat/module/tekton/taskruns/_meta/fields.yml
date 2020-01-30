@@ -4,14 +4,22 @@
     Tekton TaskRuns metrics
   release: beta
   fields:
-    - name: total
+    - name: taskrun.name
+      type: keyword
+      description: >
+        This identifies the TaskRun name.
+    - name: taskrun.status
+      type: keyword
+      description: >
+        This identifies the TaskRun status (success, failed).
+    - name: taskrun.task
       type: long
       description: >
-        Total TaskRuns managed by Tekton
-    - name: running
-      type: long
+        This identifies the Task related to this Run.
+    - name: taskrun.namespace
+      type: keyword
       description: >
-        Number of TaskRuns executing currently
+        This identifies the namespace where the TaskRun is deployed.
     - name: taskrun.duration.sec.bucket.*
       type: object
       object_type: long
@@ -27,18 +35,7 @@
       description: >
         TaskRun duration, number of requests
 
-    - name: taskrun.name
-      type: keyword
-      description: >
-        This identifies the TaskRun name.
-    - name: taskrun.task
-      type: long
-      description: >
-        This identifies the Task related to this Run.
-    - name: taskrun.namespace
-      type: keyword
-      description: >
-        This identifies the namespace where the TaskRun is deployed.
+
 
 
 

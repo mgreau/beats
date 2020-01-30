@@ -1,0 +1,26 @@
+- name: pipelines_stats
+  type: group
+  description: >
+    Tekton Pipelines metrics (TaskRuns, PipelineRuns...)
+  release: beta
+  fields:
+    - name: taskrun.count
+      type: long
+      description: >
+        Total TaskRuns executed by Tekton
+    - name: taskrun.running.count
+      type: long
+      description: >
+        Number of TaskRuns currently running
+    - name: pipelinerun.count
+      type: long
+      description: >
+        Total PipelineRuns executed by Tekton
+    - name: pipelinerun.running.count
+      type: long
+      description: >
+        Number of PipelineRuns currently running
+
+
+
+

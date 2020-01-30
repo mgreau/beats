@@ -2,7 +2,7 @@
 // or more contributor license agreements. Licensed under the Elastic License;
 // you may not use this file except in compliance with the Elastic License.
 
-package taskruns
+package pipelines_stats
 
 import (
 	"github.com/elastic/beats/metricbeat/helper/prometheus"
@@ -24,19 +24,19 @@ var (
 
 var mapping = &prometheus.MetricsMapping{
 	Metrics: map[string]prometheus.MetricMap{
-		"tekton_taskrun_duration_seconds": prometheus.Metric("taskrun.duration.sec", prometheus.OpMultiplyBuckets(1000)),
+		"tekton_taskrun_count":              prometheus.Metric("taskrun.count"),
+		"tekton_running_taskruns_count":     prometheus.Metric("taskrun.running.count"),
+		"tekton_pipelinerun_count":          prometheus.Metric("pipelinerun.count"),
+		"tekton_running_pipelineruns_count": prometheus.Metric("pipelinerun.running.count"),
 	},
 
 	Labels: map[string]prometheus.LabelMap{
-		"task":      prometheus.KeyLabel("task"),
-		"taskrun":   prometheus.KeyLabel("taskrun"),
-		"namespace": prometheus.KeyLabel("namespace"),
 		"status": prometheus.KeyLabel("status"),
 	},
 }
 
 func init() {
-	mb.Registry.MustAddMetricSet("tekton", "taskruns",
+	mb.Registry.MustAddMetricSet("tekton", "pipelines_stats",
 		prometheus.MetricSetBuilder(mapping),
 		mb.WithHostParser(hostParser))
 }
